@@ -16,17 +16,15 @@ class _WelcomepageState extends State<Welcomepage> {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
+                    children: [
           Padding(
             padding:
                 const EdgeInsets.only(top: 114.0, left: 112.0, right: 112.0),
-            child: Expanded(
-              child: Container(
-                child: Image(
-                  image: AssetImage('images/logo_splash.png'),
-                  width: 154.0,
-                  height: 70.0,
-                ),
+            child: Container(
+              child: Image(
+                image: AssetImage('images/logo_splash.png'),
+                width: 154.0,
+                height: 70.0,
               ),
             ),
           ),

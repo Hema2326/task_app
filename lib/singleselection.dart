@@ -9,16 +9,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // title: 'Localizations Sample App',
-      // localizationsDelegates: [
-      //   GlobalMaterialLocalizations.delegate,
-      //   GlobalWidgetsLocalizations.delegate,
-      //   GlobalCupertinoLocalizations.delegate,
-      // ],
-      // supportedLocales: [
-      //   const Locale('en', ''), // English, no country code
-      //   const Locale('er', ''), // Arabic, no country code
-      // ],
       home: DropDown(),
     );
   }
