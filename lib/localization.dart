@@ -13,9 +13,8 @@ class _LangPageState extends State<LangPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("LangPage"),
+        title: Text("LangPage").tr(),
         backgroundColor: Colors.blue,
-        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: Column(

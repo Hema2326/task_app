@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:task_app/exchange.dart';
 import 'package:task_app/lottie.dart';
 import 'package:task_app/sharedpreference.dart';
+import 'package:task_app/youtubeplayer.dart';
 import 'shimmer.dart';
 import 'hero.dart';
 import 'pull.dart';
@@ -197,11 +199,9 @@ class _AnimationPageWidget extends State {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => LangPage()));
+                                  builder: (context) => Exchange()));
                         },
-                        child: Text(
-                          'localization',
-                        ),
+                        child: Text('Exchange'),
                       ),
                     ),
                   ),
@@ -230,6 +230,36 @@ class _AnimationPageWidget extends State {
                   ),
                 ),
               ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                children: [
+                  AnimatedContainer(
+                    width: 400.0,
+                    height: 100.0,
+                    decoration: BoxDecoration(
+                      color: Colors.pink[50],
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    duration: Duration(seconds: 30),
+                    curve: Curves.fastOutSlowIn,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => YoutubePlayers()));
+                      },
+                      child: Center(
+                        child: Text(
+                          'Youtube Player',
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ));

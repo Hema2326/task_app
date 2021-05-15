@@ -49,6 +49,9 @@ dependencies:
   rsa_encrypt: ^2.0.0
   local_auth: ^1.1.4
   easy_localization: ^3.0.0
+  youtube_player_flutter: ^8.0.0
+  http: ^0.13.3
+  # cached_network_image: ^3.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

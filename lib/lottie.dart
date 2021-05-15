@@ -14,7 +14,6 @@ class _LottiePageState extends State<LottiePage> {
       appBar: AppBar(
         title: Text("Lottie Page"),
         backgroundColor: Colors.blue,
-        automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
         child: Column(
