@@ -51,10 +51,13 @@ dependencies:
   easy_localization: ^3.0.0
   youtube_player_flutter: ^8.0.0
   http: ^0.13.3
+  dots_indicator: ^0.0.4
+  # flutter_downloader: ^1.6.0
   # cached_network_image: ^3.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_walkthrough:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

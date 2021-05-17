@@ -29,69 +29,60 @@ class _ReadContactsState extends State<ReadContacts> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Contact Page',
-        theme: ThemeData(
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-        home: Scaffold(
-          appBar: AppBar(
-            leading: IconButton(
-              icon: Icon(FontAwesomeIcons.arrowLeft),
-              onPressed: () {},
-            ),
-            title: Text("Contact List"),
-            backgroundColor: Colors.blue,
-          ),
-          body: Container(
-            child: (listContacts.length > 0)
-                ? ListView.builder(
-                    itemCount: listContacts.length,
-                    itemBuilder: (context, index) {
-                      Contact contact = listContacts.get(index);
-                      return Card(
-                        child: ListTile(
-                            leading: CircleAvatar(
-                              backgroundColor: Colors.green,
-                              child: Center(
-                                child: (contact.avatar != null)
-                                    ? Image.memory(
-                                        contact.avatar,
-                                        height: 28,
-                                        width: 28,
-                                      )
-                                    : Icon(Icons.face),
-                              ),
-                            ),
-                            title: Text("${contact.displayName}"),
-                            subtitle: Text((contact.phones.length > 0)
-                                ? "${contact.phones.get(0)}"
-                                : "No contact"),
-                            trailing: InkWell(
-                              child: Icon(
-                                Icons.call,
-                                color: Colors.green,
-                              ),
-                              onTap: () {
-                                _makePhoneCall(
-                                    "tel:${contact.phones.length.gcd(0)}");
-                              },
-                            )),
-                      );
-                    })
-                : Center(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        CircularProgressIndicator(
-                          backgroundColor: Colors.red,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Contact List"),
+        backgroundColor: Colors.blue,
+      ),
+      body: Container(
+        child: (listContacts.length > 0)
+            ? ListView.builder(
+                itemCount: listContacts.length,
+                itemBuilder: (context, index) {
+                  Contact contact = listContacts.get(index);
+                  return Card(
+                    child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.green,
+                          child: Center(
+                            child: (contact.avatar != null)
+                                ? Image.memory(
+                                    contact.avatar,
+                                    height: 28,
+                                    width: 28,
+                                  )
+                                : Icon(Icons.face),
+                          ),
                         ),
-                        Text("reading Contacts...")
-                      ],
+                        title: Text("${contact.displayName}"),
+                        subtitle: Text((contact.phones.length > 0)
+                            ? "${contact.phones.get(0)}"
+                            : "No contact"),
+                        trailing: InkWell(
+                          child: Icon(
+                            Icons.call,
+                            color: Colors.green,
+                          ),
+                          onTap: () {
+                            _makePhoneCall(
+                                "tel:${contact.phones.length.gcd(0)}");
+                          },
+                        )),
+                  );
+                })
+            : Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    CircularProgressIndicator(
+                      backgroundColor: Colors.red,
                     ),
-                  ),
-          ),
-        ));
+                    Text("reading Contacts...")
+                  ],
+                ),
+              ),
+      ),
+    );
   }
 
   Future<void> _makePhoneCall(String url) async {

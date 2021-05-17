@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
+import 'package:task_app/walkthrough.dart';
 
 void main() => runApp(MyApp());
 
@@ -65,6 +66,14 @@ class _AnimationsPageWidget extends State {
                   ),
                 ),
               )),
+          // ignore: deprecated_member_use
+          RaisedButton(
+              color: Colors.blue,
+              child: Text(' Walkthrough view'),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => WalkthroughView()));
+              }),
         ],
       ),
     );

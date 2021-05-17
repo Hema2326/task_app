@@ -1,23 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Pull to Refresh',
-
-      // to hide debug banner
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: HomesPage(),
-    );
-  }
-}
-
 class HomesPage extends StatefulWidget {
   @override
   _HomesPageState createState() => _HomesPageState();
