@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 import 'package:task_app/emailcall.dart';
+import 'package:task_app/offlines.dart';
 import 'package:task_app/walkthrough.dart';
 
 void main() => runApp(MyApp());
@@ -82,6 +83,14 @@ class _AnimationsPageWidget extends State {
               onPressed: () {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (context) => Calls()));
+              }),
+          // ignore: deprecated_member_use
+          RaisedButton(
+              color: Colors.blue,
+              child: Text(' Offline data'),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Offlinee()));
               }),
         ],
       ),

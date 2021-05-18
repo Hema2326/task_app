@@ -40,6 +40,16 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+            <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}com.example.task_app"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
             
         </activity>
         <!-- Don't delete the meta-data below.
