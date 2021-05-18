@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter_contact/contacts.dart';
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
 
