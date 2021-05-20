@@ -1,93 +1,80 @@
-// import 'package:flutter/material.dart';
-// import 'package:image_picker/image_picker.dart';
-// import 'package:social_share/social_share.dart';
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:social_share/social_share.dart';
 
-// import 'dart:async';
-// import 'package:screenshot/screenshot.dart';
-// import 'dart:io';
+import 'package:screenshot/screenshot.dart';
+import 'dart:io';
 
-// class Socialshares extends StatefulWidget {
-//   @override
-//   _SocialsharesState createState() => _SocialsharesState();
-// }
+class Socialshares extends StatefulWidget {
+  @override
+  _SocialsharesState createState() => _SocialsharesState();
+}
 
-// class _SocialsharesState extends State<Socialshares> {
-//   String _platformVersion = 'Unknown';
+class _SocialsharesState extends State<Socialshares> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
-//   @override
-//   void initState() {
-//     super.initState();
-//     initPlatformState();
-//   }
-
-//   Future<void> initPlatformState() async {
-//     String platformVersion;
-
-//     if (!mounted) return;
-
-//     setState(() {
-//       _platformVersion = platformVersion;
-//     });
-//   }
-
-//   ScreenshotController screenshotController = ScreenshotController();
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//         appBar: AppBar(
-//           backgroundColor: Colors.blue,
-//           title: Text('Social Media'),
-//         ),
-//         body: Screenshot(
-//             controller: screenshotController,
-//             child: Container(
-//                 color: Colors.white,
-//                 alignment: Alignment.center,
-//                 child: Column(
-//                     mainAxisAlignment: MainAxisAlignment.center,
-//                     crossAxisAlignment: CrossAxisAlignment.center,
-//                     children: <Widget>[
-//                       Text(
-//                         'Running on: $_platformVersion\n',
-//                         textAlign: TextAlign.center,
-//                       ),
-//                       // ignore: deprecated_member_use
-//                       RaisedButton(
-//                         onPressed: () async {
-//                           File file = await ImagePicker.pickImage(
-//                             source: ImageSource.gallery,
-//                           );
-//                           SocialShare.shareInstagramStory(
-//                             file.path,
-//                             backgroundTopColor: "#ffffff",
-//                             backgroundBottomColor: "#000000",
-//                             attributionURL: "https://deep-link-url",
-//                           ).then((data) {
-//                             print(data);
-//                           });
-//                         },
-//                         child: Text("Share On Instagram Story"),
-//                       ),
-//                       // ignore: deprecated_member_use
-//                       RaisedButton(
-//                         onPressed: () async {
-//                           await screenshotController
-//                               .capture()
-//                               .then((image) async {
-//                             Image.memory(image).;
-//                             SocialShare.shareInstagramStory(
-//                               image.path,
-//                               backgroundTopColor: "#ffffff",
-//                               backgroundBottomColor: "#000000",
-//                               attributionURL: "https://deep-link-url",
-//                               backgroundImagePath: image.path,
-//                             ).then((data) {
-//                               print(data);
-//                             });
-//                           });
-//                         },
-//                         child: Text("Share On Instagram Story with background"),
-//                       ),
-//                     ]))));
-//   }
-// }
+  ScreenshotController screenshotController = ScreenshotController();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.blue,
+          title: Text('Social Media'),
+        ),
+        body: Screenshot(
+            controller: screenshotController,
+            child: Container(
+                color: Colors.white,
+                alignment: Alignment.center,
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      // ignore: deprecated_member_use
+                      RaisedButton(
+                        onPressed: () async {
+                          File file = await ImagePicker.pickImage(
+                            source: ImageSource.gallery,
+                          );
+                          SocialShare.shareInstagramStory(
+                            file.path,
+                            backgroundTopColor: "#ffffff",
+                            backgroundBottomColor: "#000000",
+                            attributionURL:
+                                "https://www.instagram.com/hema.ghn/",
+                          ).then((data) {
+                            print(data);
+                          });
+                        },
+                        child: Text("Share On Instagram Story"),
+                      ),
+                      // ignore: deprecated_member_use
+                      RaisedButton(
+                        onPressed: () {
+                          screenshotController
+                              .capture(delay: Duration(milliseconds: 20))
+                              .then((image) async {
+                            Directory tempDir = await getTemporaryDirectory();
+                            String filepath = '${tempDir.path}/my_image.jpg';
+                            File(filepath).writeAsBytes(image);
+                            SocialShare.shareInstagramStory(
+                              filepath,
+                              backgroundTopColor: "#ffffff",
+                              backgroundBottomColor: "#000000",
+                              attributionURL:
+                                  "https://www.instagram.com/hema.ghn/",
+                              backgroundImagePath: filepath,
+                            ).then((data) {
+                              print(data);
+                            });
+                          });
+                        },
+                        child: Text("Share On Instagram Story with background"),
+                      ),
+                    ]))));
+  }
+}

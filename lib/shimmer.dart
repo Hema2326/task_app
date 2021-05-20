@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 import 'package:task_app/emailcall.dart';
 import 'package:task_app/offlines.dart';
+
+import 'package:task_app/tabtospeak.dart';
 import 'package:task_app/walkthrough.dart';
+
+import 'socialshares.dart';
+import 'tabtospeak.dart';
 
 void main() => runApp(MyApp());
 
@@ -91,6 +96,22 @@ class _AnimationsPageWidget extends State {
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Offlinee()));
+              }),
+          // ignore: deprecated_member_use
+          RaisedButton(
+              color: Colors.blue,
+              child: Text(' Tab to speak'),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => TabtoSpeak()));
+              }),
+          // ignore: deprecated_member_use
+          RaisedButton(
+              color: Colors.blue,
+              child: Text(' Socialshare'),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Socialshares()));
               }),
         ],
       ),

@@ -50,11 +50,18 @@ dependencies:
   local_auth: ^1.1.4
   easy_localization: ^3.0.0
   youtube_player_flutter: ^8.0.0
-  http: ^0.13.3
+  # http: ^0.13.3
   dots_indicator: ^0.0.4
   flutter_email_sender: ^5.0.0
   social_share: ^2.1.1
   screenshot: ^0.3.0
+  speech_to_text: ^3.2.0
+  highlight_text: ^1.0.0
+  avatar_glow: ^2.0.1
+  flutter_downloader: ^1.6.0
+  path_provider: ^2.0.1
+  flutter_currency_converter: ^0.0.3
+  
   
  
 
@@ -62,7 +69,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_walkthrough:
-  path_provider:
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

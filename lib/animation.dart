@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:task_app/exchange.dart';
 import 'package:task_app/lottie.dart';
 import 'package:task_app/sharedpreference.dart';
 import 'package:task_app/youtubeplayer.dart';
+// ignore: unused_import
+import 'currencyconvertor.dart';
+import 'exchange.dart';
 import 'shimmer.dart';
 import 'hero.dart';
 import 'pull.dart';
 import 'localization.dart';
-//import 'package:shimmer_animation/shimmer_animation.dart';
 
 void main() => runApp(MyApp());
 
