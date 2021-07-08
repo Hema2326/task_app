@@ -3,7 +3,7 @@ description: A new Flutter application.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -23,60 +23,60 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-   
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  webview_flutter: ^0.3.0
-  custom_radio: ^0.1.2
-  contacts_service: ^0.6.1
-  permission_handler: ^5.0.0
-  image_picker: ^0.6.0
-  google_maps_flutter: ^2.0.3
-  font_awesome_flutter: ^9.0.0
-  flutter_contact: ^0.8.1+2
-  url_launcher: ^6.0.3
   animated_text_kit: ^4.2.1
-  lottie: ^1.0.0
-  shimmer_animation: ^2.0.0
-  shared_preferences: ^2.0.5
   animations: ^2.0.0
-  encrypt: ^5.0.0
-  flutter_string_encryption: ^0.3.1
-  rsa_encrypt: ^2.0.0
-  local_auth: ^1.1.4
-  easy_localization: ^3.0.0
-  youtube_player_flutter: ^8.0.0
-  # http: ^0.13.3
-  dots_indicator: ^0.0.4
-  flutter_email_sender: ^5.0.0
-  social_share: ^2.1.1
-  screenshot: ^0.3.0
-  speech_to_text: ^3.2.0
-  highlight_text: ^1.0.0
   avatar_glow: ^2.0.1
-  flutter_downloader: ^1.6.0
-  path_provider: ^2.0.1
-  flutter_currency_converter: ^0.0.3
+  bloc: ^7.0.0
+  contacts_service: ^0.6.1
+  cupertino_icons: ^1.0.2
   
-  
+  dio: ^4.0.0
  
+  easy_localization: ^3.0.0
+  encrypt: ^5.0.0
+  flutter_contact: ^0.8.1+2
+  
+  flutter_downloader: ^1.6.0
+  flutter_email_sender: ^5.0.0
+  flutter_string_encryption: ^0.3.1
+  font_awesome_flutter: ^9.0.0
+  google_maps_flutter: ^2.0.3
+  highlight_text: ^1.0.0
+  image_picker: ^0.8.0
+  local_auth: ^1.1.4
+  lottie: ^1.0.0
+  path_provider: ^2.0.1
+  permission_handler: ^8.0.0+2
+  rsa_encrypt: ^2.0.0
+  screenshot: ^0.3.0
+  shared_preferences: ^2.0.5
+  shimmer_animation: ^2.0.0
+  social_share: ^2.1.1
+  flutter_speech_recognition: ^2.0.5
+  speech_to_text: ^2.2.0
+  url_launcher: ^6.0.5
+  firebase_messaging: ^10.0.0
+  webview_flutter: ^0.3.0
+  youtube_player_flutter: ^8.0.0
+  flutter_bloc: ^7.0.0
+  equatable: ^2.0.2
+  firebase_core: ^1.2.1
+  flutter_local_notifications: ^5.0.0+4
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_walkthrough:
+  flutter_walkthrough: null
+  http:
+  path: 
+  
   
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -89,10 +89,8 @@ flutter:
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
@@ -105,6 +103,5 @@ flutter:
         - asset: assets/Poppins-Italic.ttf
         - asset: assets/Poppins-Medium.ttf
           style: italic
-  
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
